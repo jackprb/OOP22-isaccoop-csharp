@@ -6,7 +6,7 @@ namespace Isaccoop.Model.Common
 	/// <summary>
 	/// This enum lists all possible types of <see cref="IRoom"/> inside a <see cref="ILevel"/>.
 	/// </summary>
-	enum RoomType 
+	public enum RoomType 
 	{
 		/// <summary>
 		/// An empty room where the player starts.
