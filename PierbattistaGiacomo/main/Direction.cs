@@ -1,16 +1,24 @@
-﻿namespace Isaccoop.Model.Common {
-
+﻿namespace Isaccoop.Model.Common
+{
 	/// <summary>
 	/// Struct that models the concept of direction.
 	/// </summary>
-	public struct Direction {
-
-		private Direction(double x, double y) {
+	public struct Direction
+	{
+		private Direction(double x, double y) 
+		{
 			X = x;
 			Y = y;
 		}
 
+		/// <summary>
+		/// Get the X component of this <see cref="Direction"/>.
+		/// </summary>
 		public double X { get; }
+
+		/// <summary>
+		/// Get the Y component of this <see cref="Direction"/>.
+		/// </summary>
 		public double Y { get; }
 
 		/// <summary>
