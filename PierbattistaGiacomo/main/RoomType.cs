@@ -11,26 +11,26 @@ namespace Isaccoop.Model.Common
 		/// <summary>
 		/// An empty room where the player starts.
 		/// </summary>
-		START,
+		Start,
 
 		/// <summary>
 		/// A room with enemies and obstacles.
 		/// </summary>
-		STANDARD,
+		Standard,
 
 		/// <summary>
 		/// A room where you can buy power ups.
 		/// </summary>
-		SHOP,
+		Shop,
 
 		/// <summary>
 		/// A room with the final boss.
 		/// </summary>
-		BOSS,
+		Boss,
 
 		/// <summary>
 		/// A room that contains a free power up.
 		/// </summary>
-		TREASURE
+		Treasure
 	}
 }
