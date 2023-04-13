@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Isaccoop.Model.Common;
 
 namespace Isaccoop.Model.Room
 {
