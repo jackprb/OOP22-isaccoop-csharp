@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Isaccoop.Model.Room
+namespace Isaccoop.Game
 {
     /// <summary>
     /// Interface to model a level, which contains many <see cref="IRoom"/>.
