@@ -3,7 +3,7 @@
 namespace it.unibo.isaccoop.model.boundingbox
 {
     /// <summary>
-    /// Implements the BoundingBox interface of a circle.
+    /// Implements the <see cref="BoundingBox"/> interface of a circle.
     /// </summary>
     public class CircleBoundingBox : IBoundingBox
     {
