@@ -5,7 +5,7 @@ namespace it.unibo.isaccoop.model.boundingbox
     /// <summary>
     /// Implements the <see cref="BoundingBox"/> interface of a rectangle.
     /// </summary>
-    public class RectBoundingBox : BoundingBox
+    public class RectBoundingBox : IBoundingBox
     {
         private readonly int _width;
         private readonly int _height;
