@@ -1,10 +1,10 @@
-﻿using NUnit.Framework;
-using it.unibo.isaccoop.model.boundingbox;
-using it.unibo.isaccoop.model.common;
+﻿using Microsoft.VisualStudio.TestTool.UnitTesting;
+using Isaccoop.Model.Boundingbox;
+using Isaccoop.Model.Common;
 
-namespace it.unibo.isaccoop.test
+namespace Isaccoop.Test
 {
-    [TestFixture]
+    [TestClass]
     public class TestBoundingBox
     {
         [Test]
@@ -24,7 +24,7 @@ namespace it.unibo.isaccoop.test
             Assert.IsFalse(result2);
         }
 
-        [Test]
+        [TestMethod]
         public void TestCircleBoundingBoxIsCollidingWithRecPerimeter()
         {
             // Arrange
@@ -41,7 +41,7 @@ namespace it.unibo.isaccoop.test
             Assert.IsFalse(result2);
         }
 
-        [Test]
+        [TestMethod]
         public void TestRectBoundingBoxGetWidthAndHeight()
         {
             // Arrange
