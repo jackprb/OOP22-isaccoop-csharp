@@ -23,7 +23,7 @@ namespace Isaccoop.Game
         /// Get an unmodifiable copy of the list of all rooms in this level.
         /// </summary>
         /// <returns>an unmodifiable copy of the list containing all the rooms in this level</returns> 
-        public IList<IRoom> GetRooms();
+        public List<IRoom> GetRooms();
 
         /// <summary>
         /// Get the room where the player begins.
