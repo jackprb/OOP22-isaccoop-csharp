@@ -1,5 +1,8 @@
 ﻿namespace Isaccoop.Game.Common;
 
+/// <summary>
+/// Interface to model elements.
+/// </summary>
 public interface IMapElement
 {
     /// <summary>
