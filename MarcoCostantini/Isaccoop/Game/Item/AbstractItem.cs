@@ -8,5 +8,5 @@ public abstract class AbstractItem : IItem
     /// <summary>
     /// Method that applies the item's effect to the player.
     /// </summary>
-    public abstract void Interact();
+    public abstract void Interact(IPlayerStat p);
 }
