@@ -12,6 +12,33 @@ namespace Isaccoop.Game{
         private double _damage;
         private double _tears;
 
+        /// <summary>
+        /// Create an enum to set initial stats of the player.
+        /// </summary>
+        private enum PlayerValue : int
+        {
+            HEART = 3,
+            COIN = 0,
+            MAX_HEART = 3,
+            SPEED = 1,
+            TEARS = 1000,
+            DAMAGE = 1
+        }
+
+        /// <summary>
+        /// Player constructor.
+        /// </summary>
+        public PlayerStatImpl()
+        {
+            this._heart = (int)PlayerValue.HEART;
+            this._maxHeart = (int)PlayerValue.MAX_HEART;
+            this._coin = (int)PlayerValue.COIN;
+            this._speed = (int)PlayerValue.SPEED;
+            this._damage = (int)PlayerValue.DAMAGE;
+            this._tears = (int)PlayerValue.TEARS;
+
+        }
+
         /// <inheritdoc cref="IPlayerStat" />
         public bool IsDead => this._heart <= 0;
 
