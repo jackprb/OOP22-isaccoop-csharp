@@ -42,13 +42,69 @@ namespace Isaccoop.Game
                 incrementRoomCount();
                 _rFactoryLogics.SetAlreadyBuiltStartRoom();
                 return new RoomBuilder.Builder(_width, _height)
-                        .roomType(RoomType.Start)
-                        .putCoord(coordInsideLevel)
-                        .build();
+                        .RoomType(RoomType.Start)
+                        .PutCoord(coordInsideLevel)
+                        .Build();
             }
             throw new InvalidOperationException(StartRoomMustBeTheFirst);
         }
 
-        
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <returns><inheritdoc/></returns>
+        public IRoom BuildStandardRoom(Point2D coordInsideLevel)
+        {
+            if (_rFactoryLogics.CanBuildNonBossNonStartRoom(_roomCount)) {
+                incrementRoomCount();
+                return new RoomBuilder.Builder(_width, _height)
+                        .RoomType(RoomType.Standard)
+                        .PutCoord(coordInsideLevel)
+                        .PutEnemies()
+                        .PutItems()
+                        .Build();
+            }
+            throw new InvalidOperationException(AlreadyGeneratedAllRooms);
+        }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <returns><inheritdoc/></returns>
+        public IRoom BuildShopRoom(Point2D coordInsideLevel)
+        {
+            if (_rFactoryLogics.CanBuildNonBossNonStartRoom(_roomCount)
+                    && !_rFactoryLogics.HasAlreadyBuiltShopRoom()) {
+                incrementRoomCount();
+                _rFactoryLogics.SetAlreadyBuiltShopRoom();
+                return new RoomBuilder.Builder(_width, _height)
+                        .RoomType(RoomType.Shop)
+                        .PutCoord(coordInsideLevel)
+                        .PutPowerUps()
+                        .Build();
+            }
+            throw new InvalidOperationException(AlreadyGeneratedAllRooms);
+        }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <returns><inheritdoc/></returns>
+        public IRoom BuildBossRoom(Point2D coordInsideLevel)
+        {
+            if (_rFactoryLogics.CanBuildBossRoom(_roomCount)
+                    && !_rFactoryLogics.HasAlreadyBuiltBossRoom()) {
+                incrementRoomCount();
+                _rFactoryLogics.SetAlreadyBuiltBossRoom();
+                return new RoomBuilder.Builder(_width, _height)
+                        .RoomType(RoomType.Boss)
+                        .PutCoord(coordInsideLevel)
+                        .PutEnemies()
+                        .Build();
+            }
+            throw new InvalidOperationException(BossRoomMustBeTheLast);
+        }
+
+       
     }
 }
