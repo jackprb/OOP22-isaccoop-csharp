@@ -1,9 +1,9 @@
-﻿using it.unibo.isaccoop.model.common;
+﻿using Isaccoop.Game.Common;
 
-namespace it.unibo.isaccoop.model.boundingbox
+namespace Isaccoop.Game
 {
     /// <summary>
-    /// Implements the <see cref="BoundingBox"/> interface of a rectangle.
+    /// Implements the <see cref="IBoundingBox"/> interface of a rectangle.
     /// </summary>
     public class RectBoundingBox : IBoundingBox
     {
@@ -25,24 +25,30 @@ namespace it.unibo.isaccoop.model.boundingbox
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public bool isCollidingWithCricle(Point2D center, Point2D center1, CircleBoundingBox circleBox) => false;
+        public bool IsCollidingWithCricle(Point2D center, Point2D center1, CircleBoundingBox circleBox)
+        {
+            throw new System.NotImplementedException();
+        }
 
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public bool isCollidingWithRecPerimeter(Point2D center, RectBoundingBox rectangleBox) => false;
+        public bool IsCollidingWithRecPerimeter(Point2D center, RectBoundingBox rectangleBox)
+        {
+            throw new System.NotImplementedException();
+        }
 
         /// <summary>
         /// Get rect bounding box width.
         /// </summary>
         /// <returns>the rectangle width</returns>
-        public int getWidth() => this._width;
+        public int GetWidth() => this._width;
 
         /// <summary>
         /// Get rect bounding box height.
         /// </summary>
         /// <returns>the rectangle height</returns>
-        public int getHeight() => this._height;
+        public int GetHeight() => this._height;
     }
 }

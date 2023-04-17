@@ -1,6 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTool.UnitTesting;
-using Isaccoop.Model.Common;
-using Isaccoop.Model.Spawn;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Isaccoop.Game;
+using Isaccoop.Game.Common;
+using System;
 using System.Collections.Generic;
 
 namespace Isaccoop.Test
@@ -54,9 +55,9 @@ namespace Isaccoop.Test
             var spawn = new SpawnRandom();
             var elements = new List<MapElement>
             {
-                new MapElement { Box = new CircleBoundingBox { Radius = 1 } },
-                new MapElement { Box = new CircleBoundingBox { Radius = 2 } },
-                new MapElement { Box = new CircleBoundingBox { Radius = 3 } }
+                new MapElement { Box = new CircleBoundingBox(1) },
+                new MapElement { Box = new CircleBoundingBox(2) },
+                new MapElement { Box = new CircleBoundingBox(3) }
             };
             int width = 10;
             int height = 10;

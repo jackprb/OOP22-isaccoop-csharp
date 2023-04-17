@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using it.unibo.isaccoop.model.common;
+using Isaccoop.Game.Common;
 
-namespace it.unibo.isaccoop.model.boundingbox
+namespace Isaccoop.Game
 {
     /// <summary>
     /// Interface that models the bounding box.
