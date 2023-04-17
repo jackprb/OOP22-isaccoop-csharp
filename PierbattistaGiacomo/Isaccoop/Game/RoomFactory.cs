@@ -3,6 +3,9 @@ using System;
 
 namespace Isaccoop.Game
 {
+    /// <summary>
+    /// Implementation of <see cref="IRoomFactory"/>.
+    /// </summary>
     public class RoomFactory : IRoomFactory
     {
         private static readonly int RoomWidth = 300;
@@ -17,7 +20,7 @@ namespace Isaccoop.Game
         private readonly int _width;
         private readonly int _height;
         private int _roomCount;
-		private readonly RoomFactoryLogics _rFactoryLogics;
+        private readonly RoomFactoryLogics _rFactoryLogics;
 
         /// <summary>
         /// Constructor. Requires the total number of rooms to be created.
@@ -38,8 +41,9 @@ namespace Isaccoop.Game
         public IRoom BuildStartRoom(Point2D coordInsideLevel)
         {
             if (_rFactoryLogics.CanBuildStartRoom(_roomCount)
-                    && !_rFactoryLogics.HasAlreadyBuiltStartRoom()) {
-                incrementRoomCount();
+                    && !_rFactoryLogics.HasAlreadyBuiltStartRoom())
+            {
+                IncrementRoomCount();
                 _rFactoryLogics.SetAlreadyBuiltStartRoom();
                 return new RoomBuilder.Builder(_width, _height)
                         .RoomType(RoomType.Start)
@@ -55,8 +59,9 @@ namespace Isaccoop.Game
         /// <returns><inheritdoc/></returns>
         public IRoom BuildStandardRoom(Point2D coordInsideLevel)
         {
-            if (_rFactoryLogics.CanBuildNonBossNonStartRoom(_roomCount)) {
-                incrementRoomCount();
+            if (_rFactoryLogics.CanBuildNonBossNonStartRoom(_roomCount))
+            {
+                IncrementRoomCount();
                 return new RoomBuilder.Builder(_width, _height)
                         .RoomType(RoomType.Standard)
                         .PutCoord(coordInsideLevel)
@@ -74,8 +79,9 @@ namespace Isaccoop.Game
         public IRoom BuildShopRoom(Point2D coordInsideLevel)
         {
             if (_rFactoryLogics.CanBuildNonBossNonStartRoom(_roomCount)
-                    && !_rFactoryLogics.HasAlreadyBuiltShopRoom()) {
-                incrementRoomCount();
+                    && !_rFactoryLogics.HasAlreadyBuiltShopRoom())
+            {
+                IncrementRoomCount();
                 _rFactoryLogics.SetAlreadyBuiltShopRoom();
                 return new RoomBuilder.Builder(_width, _height)
                         .RoomType(RoomType.Shop)
@@ -93,8 +99,9 @@ namespace Isaccoop.Game
         public IRoom BuildBossRoom(Point2D coordInsideLevel)
         {
             if (_rFactoryLogics.CanBuildBossRoom(_roomCount)
-                    && !_rFactoryLogics.HasAlreadyBuiltBossRoom()) {
-                incrementRoomCount();
+                    && !_rFactoryLogics.HasAlreadyBuiltBossRoom())
+            {
+                IncrementRoomCount();
                 _rFactoryLogics.SetAlreadyBuiltBossRoom();
                 return new RoomBuilder.Builder(_width, _height)
                         .RoomType(RoomType.Boss)
@@ -105,6 +112,63 @@ namespace Isaccoop.Game
             throw new InvalidOperationException(BossRoomMustBeTheLast);
         }
 
-       
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <returns><inheritdoc/></returns>
+        public IRoom BuildTreasureRoom(Point2D coordInsideLevel)
+        {
+            if (_rFactoryLogics.CanBuildNonBossNonStartRoom(_roomCount)
+                    && !_rFactoryLogics.HasAlreadyBuiltTreasureRoom())
+            {
+                IncrementRoomCount();
+                _rFactoryLogics.SetAlreadyBuiltTreasuretRoom();
+                return new RoomBuilder.Builder(_width, _height)
+                        .RoomType(RoomType.Treasure)
+                        .PutCoord(coordInsideLevel)
+                        .PutPowerUps()
+                        .Build();
+            }
+            throw new InvalidOperationException(AlreadyGeneratedAllRooms);
+        }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <returns><inheritdoc/></returns>
+        public IRoom BuildRoomInProperOrder(Point2D coordInsideLevel)
+        {
+            if (_rFactoryLogics.CanBuildStartRoom(_roomCount)
+                    && !_rFactoryLogics.HasAlreadyBuiltStartRoom())
+            {
+                return BuildStartRoom(coordInsideLevel);
+            }
+            if (_rFactoryLogics.CanBuildBossRoom(_roomCount)
+                    && !_rFactoryLogics.HasAlreadyBuiltBossRoom())
+            {
+                return BuildBossRoom(coordInsideLevel);
+            }
+            if (_rFactoryLogics.CanBuildNonBossNonStartRoom(_roomCount)
+                    && !_rFactoryLogics.HasAlreadyBuiltShopRoom())
+            {
+                return BuildShopRoom(coordInsideLevel);
+            }
+            if (_rFactoryLogics.CanBuildNonBossNonStartRoom(_roomCount)
+                    && !_rFactoryLogics.HasAlreadyBuiltTreasureRoom())
+            {
+                return BuildTreasureRoom(coordInsideLevel);
+            }
+            if (_rFactoryLogics.CanBuildNonBossNonStartRoom(_roomCount))
+            {
+                return BuildStandardRoom(coordInsideLevel);
+            }
+            throw new InvalidOperationException(CannotCreateMoreRooms);
+        }
+
+        /// <summary>
+        /// Increments the room count. Useful to check if a specified room can be generated in that index.
+        /// (START room must alway be the first, BOSS room the last)
+        /// </summary>
+        private void IncrementRoomCount() => _roomCount++;
     }
 }
