@@ -26,13 +26,6 @@ namespace Isaccoop.Game
         public IList<IRoom> GetRooms();
 
         /// <summary>
-        /// Check if this level is complete.
-        /// A level is complete if all its room are complete.
-        /// </summary>
-        /// <returns>true if this level is complete, false otherwise</returns> 
-        public bool IsLevelComplete();
-
-        /// <summary>
         /// Get the room where the player begins.
         /// </summary>
         /// <returns> the room where the player begins</returns>

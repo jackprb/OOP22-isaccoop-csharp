@@ -43,12 +43,6 @@ namespace Isaccoop.Game
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public bool IsLevelComplete() => _rooms.All(r => r.IsComplete());
-
-        /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
-        /// <returns><inheritdoc/></returns>
         public IRoom GetStartRoom() => _rooms.Find(r => r.GetRoomType() == RoomType.Start);
     }
 }
