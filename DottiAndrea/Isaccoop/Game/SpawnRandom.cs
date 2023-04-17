@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using Isaccoop.Model.Boundingbox;
-using Isaccoop.Model.Common;
+using Isaccoop.Game.Common;
 
-namespace Isaccoop.Model.Spawn
+namespace Isaccoop.Game
 {
     /// <summary>
     /// SpawnOrdered class that implements <see cref="ISpawn"/>, it models a random spawn.

@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-using Isaccoop.Model.Common;
+using Isaccoop.Game.Common;
 
-namespace Isaccoop.Model.Spawn
+namespace Isaccoop.Game
 {
     /// <summary>
     /// SpawnOrdered class that implements <see cref="ISpawn"/>, it models an ordered spawn.

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-using Isaccoop.Model.Common;
+using Isaccoop.Game.Common;
 
-namespace Isaccoop.Model.Spawn
+namespace Isaccoop.Game
 {
     /// <summary>
     /// Spawn interface to model entities delegates to spawn other entities.

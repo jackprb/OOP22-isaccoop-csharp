@@ -1,13 +1,13 @@
-﻿using Microsoft.VisualStudio.TestTool.UnitTesting;
-using Isaccoop.Model.Boundingbox;
-using Isaccoop.Model.Common;
+﻿using Isaccoop.Game;
+using Isaccoop.Game.Common;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Isaccoop.Test
 {
     [TestClass]
     public class TestBoundingBox
     {
-        [Test]
+        [TestMethod]
         public void TestCircleBoundingBoxIsCollidingWithCricle()
         {
             // Arrange

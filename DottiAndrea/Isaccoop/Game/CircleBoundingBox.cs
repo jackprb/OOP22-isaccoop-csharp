@@ -1,9 +1,9 @@
-﻿using it.unibo.isaccoop.model.common;
+﻿using Isaccoop.Game.Common;
 
-namespace it.unibo.isaccoop.model.boundingbox
+namespace Isaccoop.Game
 {
     /// <summary>
-    /// Implements the <see cref="BoundingBox"/> interface of a circle.
+    /// Implements the <see cref="IBoundingBox"/> interface of a circle.
     /// </summary>
     public class CircleBoundingBox : IBoundingBox
     {
