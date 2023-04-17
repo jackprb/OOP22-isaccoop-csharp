@@ -1,8 +1,10 @@
-﻿namespace Isaccoop.Game;
+﻿using Isaccoop.Game.Common;
+
+namespace Isaccoop.Game;
 
 public interface IAiEnemy
 {
-    public void UpdateEnemies(MapElement player);
+    public void UpdateEnemies(IMapElement player);
 
-    public List<Enemy> GetControlledEnemies();
+    public List<IEnemy> GetControlledEnemies();
 }

@@ -1,6 +1,8 @@
-﻿namespace Isaccoop.Game;
+﻿using Isaccoop.Game.Common;
 
-public interface IEnemy : IEnemyActions, MapElement
+namespace Isaccoop.Game;
+
+public interface IEnemy : IEnemyActions, IMapElement
 {
     
 }
