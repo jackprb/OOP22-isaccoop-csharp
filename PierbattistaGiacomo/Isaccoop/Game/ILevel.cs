@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Isaccoop.Model.Room
+namespace Isaccoop.Game
 {
     /// <summary>
     /// Interface to model a level, which contains many <see cref="IRoom"/>.
@@ -24,13 +24,6 @@ namespace Isaccoop.Model.Room
         /// </summary>
         /// <returns>an unmodifiable copy of the list containing all the rooms in this level</returns> 
         public IList<IRoom> GetRooms();
-
-        /// <summary>
-        /// Check if this level is complete.
-        /// A level is complete if all its room are complete.
-        /// </summary>
-        /// <returns>true if this level is complete, false otherwise</returns> 
-        public bool IsLevelComplete();
 
         /// <summary>
         /// Get the room where the player begins.

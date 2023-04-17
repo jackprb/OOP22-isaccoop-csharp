@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Isaccoop.Model.Common
+namespace Isaccoop.Game.Common
 {
     /// <summary>
     /// Struct that models the concept of direction.

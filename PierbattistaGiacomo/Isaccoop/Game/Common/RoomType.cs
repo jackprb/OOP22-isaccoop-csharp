@@ -1,6 +1,6 @@
-﻿using Isaccoop.Model.Room;
+﻿using Isaccoop.Game.Room;
 
-namespace Isaccoop.Model.Common
+namespace Isaccoop.Game.Common
 {
     /// <summary>
     /// This enum lists all possible types of <see cref="IRoom"/> inside a <see cref="ILevel"/>.
