@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Isaccoop.Game.Common;
+﻿using Isaccoop.Game.Common;
 
 namespace Isaccoop.Game
 {
