@@ -5,7 +5,7 @@ namespace Isaccoop.Game;
 /// <summary>
 /// AIEnemy interface which represents the AI for enemies.
 /// </summary>
-public interface IAiEnemy
+public interface IAiEnemy : IRemovable
 {
     /// <summary>
     /// Method to perform enemies actions (move and hit) into the room linked to AI implementation.

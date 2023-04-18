@@ -41,25 +41,25 @@ namespace Isaccoop.Game{
         }
 
         /// <inheritdoc cref="IPlayerStat" />
-        public bool IsDead => this._heart <= 0;
+        public bool IsDead => _heart <= 0;
 
         /// <inheritdoc cref="IPlayerStat" />
-        public int Heart { get => this._heart; set => _heart = value; }
+        public int Heart { get => _heart; set => _heart = value; }
 
         /// <inheritdoc cref="IPlayerStat" />
-        public int MaxHeart { get => this._maxHeart; set => _maxHeart = value; }
+        public int MaxHeart { get => _maxHeart; set => _maxHeart = value; }
 
         /// <inheritdoc cref="IPlayerStat" />
-        public int Coin { get => this._coin; set => _coin = value; }
+        public int Coin { get => _coin; set => _coin = value; }
 
         /// <inheritdoc cref="IPlayerStat" />
-        public double Speed { get => this._speed; set => _speed = value; }
+        public double Speed { get => _speed; set => _speed = value; }
 
         /// <inheritdoc cref="IPlayerStat" />
-        public double Damage { get => this._damage; set => _damage = value; }
+        public double Damage { get => _damage; set => _damage = value; }
 
         /// <inheritdoc cref="IPlayerStat" />
-        public double Tears { get => this._tears; set => _tears = value < 100.0 ? 100.0 : value; }
+        public double Tears { get => _tears; set => _tears = value < 100.0 ? 100.0 : value; }
 
         /// <summary>
         /// Check if the player died with the last shot.
@@ -71,7 +71,7 @@ namespace Isaccoop.Game{
             {
                 Heart -= 1;
             }
-            return this.IsDead;
+            return IsDead;
         }
     }
 

@@ -19,7 +19,7 @@ namespace Isaccoop.Game{
         /// <inheritdoc cref="IPlayerMovement" />
         public Point2D GetMovePreview(readonly Direction direction)
         {
-            double distance = base.Speed;
+            double distance = base.Speed();
             double x = base.GetCoords().X();
             double y = base.GetCoords().Y();
             switch(direction) 

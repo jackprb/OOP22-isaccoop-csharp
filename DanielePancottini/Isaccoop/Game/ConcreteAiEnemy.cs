@@ -1,38 +1,29 @@
-﻿namespace Isaccoop.Game;
+﻿using Isaccoop.Game.Common;
+
+namespace Isaccoop.Game;
 
 public class ConcreteAiEnemy : IAiEnemy
 {
-    private final List<Enemy> controlledEnemies;
 
-    /**
-     * Constructor for {@link ConcreteAIEnemy}.
-     *
-     * @param enemies enemies to attach to {@link ConcreteAIEnemy} as a {@link List}
-     * */
-    public ConcreteAIEnemy(final List<Enemy> enemies) {
-        this.controlledEnemies = new ArrayList<>(enemies);
+    private readonly List<IEnemy> _controlledEnemies;
+
+    public ConcreteAiEnemy (IEnumerable<IEnemy> enemies)
+    {
+        _controlledEnemies = new List<IEnemy>(enemies);
     }
 
-    @Override
-    public void updateEnemies(final MapElement player, final BoundingBox containerBox) {
-        this.controlledEnemies.forEach(enemy -> {
-            enemy.move(player.getCoords(), containerBox);
-            enemy.hit(player.getCoords());
-            enemy.getWeaponShots().ifPresent(shots -> shots.forEach(shot -> shot.tickShot()));
+    public void UpdateEnemies(IMapElement player) {
+        _controlledEnemies.ForEach(enemy => {
+            enemy.Move(player.GetCoords());
+            enemy.Hit(player.GetCoords());
+            (enemy.GetWeaponShots() ?? new List<IWeaponShot>()).ForEach(shot => shot.TickShot());
         });
     }
+    
+    public List<IEnemy> GetControlledEnemies() => _controlledEnemies.ToList();
 
-    @Override
-    public List<Enemy> getControlledEnemies() {
-        return List.copyOf(this.controlledEnemies);
-    }
-
-    /**
-     * Remove the enemy 'e' from the list.
-     * @param e
-     */
-    @Override
-    public void remove(final MapElement e) {
-        this.controlledEnemies.remove(e);
+    public void Remove(IMapElement e)
+    {
+        _controlledEnemies.Remove((IEnemy) e);
     }
 }
