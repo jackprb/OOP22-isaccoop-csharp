@@ -12,13 +12,13 @@ public interface IEnemy : IEnemyActions, IMapElement
     /// Check if the enemy is dead.
     /// </summary>
     /// <returns>boolean check result</returns>
-    public bool IsDead();
+    bool IsDead();
 
     /// <summary>
     /// Set enemy hearts.
     /// </summary>
     /// <param name="damage">player damage to compute new enemy hearts value</param>
-    public void SetHearts(double damage);
+    void SetHearts(double damage);
 
     /// <summary>
     /// Get enemy hearts.
