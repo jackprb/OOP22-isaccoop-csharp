@@ -41,9 +41,19 @@ namespace Isaccoop.Game.Common
         /// <returns>difference between two points as a <see cref="Vector2D"/></returns> 
         public Vector2D Sub(Point2D v) => new Vector2D(X - v.X, Y - v.Y);
 
-        public override bool Equals(object obj) =>
-                obj is Point2D d && X == d.X && Y == d.Y;
+        public override bool Equals(object obj)
+        {
+            return obj is Point2D d &&
+                   X == d.X &&
+                   Y == d.Y;
+        }
 
-        ///public override int GetHashCode() => HashCode.Combine(X, Y);
+        public override int GetHashCode()
+        {
+            int hashCode = 1861411795;
+            hashCode = hashCode * -1521134295 + X.GetHashCode();
+            hashCode = hashCode * -1521134295 + Y.GetHashCode();
+            return hashCode;
+        }
     }
 }
