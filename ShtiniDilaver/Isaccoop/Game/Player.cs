@@ -17,13 +17,13 @@ namespace Isaccoop.Game{
         /// Move the player along passed direction.
         /// </summary>
         /// <param name="direction">The direction where player is moving.</param>
-        void move(readonly Direction direction)
+        void Move(readonly Direction direction)
         {
             base.Update(direction);
         }
 
         /// <inheritdoc cref="IHitable" />
-       public void onHit(readonly Enemy enemy)
+       public void OnHit(readonly IEnemy enemy)
        {
             enemy.SetHearts(base.Damage());
        } 
