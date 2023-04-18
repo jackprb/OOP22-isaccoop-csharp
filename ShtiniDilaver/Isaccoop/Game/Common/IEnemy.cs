@@ -5,7 +5,7 @@ namespace Isaccoop.Game;
 /// <summary>
 /// Enemy interface to model enemy concept.
 /// </summary>
-public interface IEnemy : IEnemyActions, IMapElement
+public interface IEnemy : IEnemyActions, IMapElement, IHitable<IPlayerStat>
 {
     
     /// <summary>

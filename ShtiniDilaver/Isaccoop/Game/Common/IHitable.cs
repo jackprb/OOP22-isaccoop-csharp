@@ -11,7 +11,7 @@ namespace Isaccoop.Game{
         /// Method to be called when the culpable is hit.
         /// </summary>
         /// <param name="entity">entity object in order to handle collision with another entity.</param>
-        void onHit(E entity);
+        void OnHit(E entity);
 
     }
 }
