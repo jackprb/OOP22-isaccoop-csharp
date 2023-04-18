@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Game\CircleBoundingBox.cs" />
+    <Compile Include="Game\Common\IMapElement.cs" />
     <Compile Include="Game\Common\Point2D.cs" />
     <Compile Include="Game\Common\Vector2D.cs" />
     <Compile Include="Game\IBoundingBox.cs" />

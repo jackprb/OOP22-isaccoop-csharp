@@ -53,7 +53,7 @@ namespace Isaccoop.Test
         {
             // Arrange
             var spawn = new SpawnRandom();
-            var elements = new List<MapElement>
+            var elements = new List<IMapElement>
             {
                 new MapElement { Box = new CircleBoundingBox(1) },
                 new MapElement { Box = new CircleBoundingBox(2) },

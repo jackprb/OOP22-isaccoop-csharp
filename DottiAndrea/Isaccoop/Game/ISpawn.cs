@@ -15,6 +15,6 @@ namespace Isaccoop.Game
         /// <param name="elementsToSpawn"></param>
         /// <param name="width"> of room</param>
         /// <param name="height"> of room</param>
-        void SetPosition(List<MapElement> elementsToSpawn, int width, int height);
+        void SetPosition(List<IMapElement> elementsToSpawn, int width, int height);
     }
 }

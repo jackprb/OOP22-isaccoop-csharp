@@ -16,14 +16,15 @@ namespace Isaccoop.Game
         /// <param name="elementsToSpawn"></param>
         /// <param name="width"> of room</param>
         /// <param name="height"> of room</param>
-        public void SetPosition(List<MapElement> elementsToSpawn, int width, int height)
+        public void SetPosition(List<IMapElement> elementsToSpawn, int width, int height)
         {
             Random random = new Random();
             elementsToSpawn.ForEach(e => {
                 double radius = ((CircleBoundingBox)e.GetBox()).GetRadius();
+                int margin = (int) (radius + radius / 2);
                 e.SetCoords(new Point2D(
-                random.NextDouble(radius + radius / 2, width - (radius + radius / 2)),
-                random.NextDouble(radius + radius / 2, height - (radius + radius / 2))
+                random.Next(margin, width - margin) * 1.0,
+                random.Next(margin, height - margin) * 1.0
                 ));
             });
         }
