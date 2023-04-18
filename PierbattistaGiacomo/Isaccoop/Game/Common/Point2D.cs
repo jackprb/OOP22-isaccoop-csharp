@@ -22,7 +22,8 @@ namespace Isaccoop.Game.Common
         /// </summary>
         /// <param name="x">x coordinate</param> 
         /// <param name="y">y  coordinate</param>
-        public Point2D(double x, double y) {
+        public Point2D(double x, double y)
+        {
             X = x;
             Y = y;
         }
