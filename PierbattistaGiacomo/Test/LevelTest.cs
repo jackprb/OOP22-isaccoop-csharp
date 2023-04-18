@@ -2,8 +2,10 @@
 using Isaccoop.Game.Common;
 using System.Collections.Generic;
 using System;
+using Isaccoop.Game;
 
-namespace Isaccoop.Game.Test {
+namespace Test
+{
     /// <summary>
     /// <see cref="Level"/> test.
     /// </summary>
@@ -15,10 +17,10 @@ namespace Isaccoop.Game.Test {
         private List<IRoom> _otherRoomList = new List<IRoom>();
 
         // variable to store data generated from LevelFactory
-        private IList<IRoom> _roomListFromFactory = new List<IRoom>();
+        private List<IRoom> _roomListFromFactory = new List<IRoom>();
 
         [TestInitialize]
-        public void SetUp()
+        public void TestInitialize()
         {
             // generate a complete level using LevelFactory
             ILevel lvl = new LevelFactory().CreateLevel();
@@ -39,11 +41,11 @@ namespace Isaccoop.Game.Test {
                         .BuildRoomInProperOrder(new Point2D(((int) roomType), 0)));
             }
 
-            // the level already has rooms (set in method setUp()) => throw exception
+            // the level already has rooms (set in method TestInitialize) => throw exception
             Assert.ThrowsException<InvalidOperationException>(() => _localLevel.PutRooms(_otherRoomList));
 
             // the localLevel must have the correct number of rooms
-            Assert.Equals(_localLevel.GetRooms().Count, _roomListFromFactory.Count);
+            Assert.AreEqual(_localLevel.GetRooms().Count, _roomListFromFactory.Count);
         }
 
         [TestMethod]
@@ -51,7 +53,7 @@ namespace Isaccoop.Game.Test {
         {
             // the List<Room> returned from localLevel is the same in roomListFromFactory
             // so, those lists must be equal
-            Assert.Equals(_localLevel.GetRooms(), _roomListFromFactory);
+            CollectionAssert.AreEquivalent(_roomListFromFactory, _localLevel.GetRooms());
         }
 
         [TestMethod]
@@ -59,7 +61,7 @@ namespace Isaccoop.Game.Test {
         {
             IRoom startRoom = _localLevel.GetRooms()
                    .Find(r => r.GetRoomType() == RoomType.Start);
-            Assert.Equals(_localLevel.GetStartRoom().GetRoomType(), startRoom.GetRoomType());
+            Assert.AreEqual(_localLevel.GetStartRoom().GetRoomType(), startRoom.GetRoomType());
         }
     }
 }
