@@ -1,8 +1,7 @@
 ﻿using Isaccoop.Game.Common;
 using System;
-using System.Collections.Generic;
 
-namespace Isaccoop.Game 
+namespace Isaccoop.Game
 {
     /// <summary>
     /// Class to model the Builder pattern, to build a <see cref="IRoom"/> using the "fluent" style.
@@ -25,15 +24,8 @@ namespace Isaccoop.Game
             private readonly int _height;
 
             // other basic field (set with their dedicated methods)
-            private Point2D? _coord;
+            private Point2D _coord;
             private RoomType? _roomType;
-
-            // optional fields (to set with their dedicated methods)
-            private List<Item> _items;
-            private List<PowerUp> _powerups;
-            private List<Enemy> _enemies;
-            private readonly Player? _player;
-            private AIEnemy? _roomAI;
 
             // to access utility methods
             private RoomBuilderUtils _builderUtils;
@@ -73,7 +65,7 @@ namespace Isaccoop.Game
                 _builderUtils = new RoomBuilderUtils(roomType);
                 return this;
             }
-
+            
             /// <summary>
             /// Method to put items inside this room. ONLY for STANDARD rooms.
             /// </summary>
@@ -83,7 +75,6 @@ namespace Isaccoop.Game
             {
                 if (_builderUtils.CanRoomHaveItems())
                 {
-                    _items = _builderUtils.GenerateItems();
                     return this;
                 }
                 throw new InvalidOperationException(ItemsInStandardRoom);
@@ -99,7 +90,6 @@ namespace Isaccoop.Game
             {
                 if (_builderUtils.CanRoomHaveEnemies())
                 {
-                    _enemies = _builderUtils.GenerateEnemies();
                     return this;
                 }
                 throw new InvalidOperationException(EnemiesBossStandardRoom);
@@ -114,7 +104,6 @@ namespace Isaccoop.Game
             {
                 if (_builderUtils.CanRoomHavePowerUps())
                 {
-                    _powerups = _builderUtils.GeneratePowerups();
                     return this;
                 }
                 throw new InvalidOperationException(PowerUpsShopTreasureRoom);
@@ -128,10 +117,9 @@ namespace Isaccoop.Game
             /// <returns>the built Room</returns> 
             public Room Build()
             {
-                if (AreThereMinimumRequirements() && CanBuildRoom())
+                if (AreThereMinimumRequirements())
                 {
-                    return new Room(_width, _height, _coord, _roomType.Value, _roomAI, _items,
-                        _powerups, _player);
+                    return new Room(_width, _height, _roomType.Value, _coord);
                 }
                 throw new InvalidOperationException(IncorrectRoomConfig);
             }
@@ -141,14 +129,6 @@ namespace Isaccoop.Game
             /// </summary>
             /// <returns> true if the minimum requirements are satisfied</returns>
             private bool AreThereMinimumRequirements() => _coord != null && _roomType.HasValue;
-
-            /// <summary>
-            /// Check if this room can be built. A room can be built only if
-            /// all required fields are set, depending on its {@link RoomType}.
-            /// </summary>
-            /// <returns> true if the room can be built, i.e. if all required fields are set,
-            /// false otherwise</returns>
-            private bool CanBuildRoom() => _builderUtils.CanBuildRoom(_items, _powerups, _enemies, _player, _roomAI);
         }
     }
 }
