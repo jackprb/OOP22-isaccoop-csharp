@@ -55,7 +55,7 @@ namespace Isaccoop.Game.Common
         /// </summary>
         /// <returns> normalized vector</returns>
         public Vector2D GetNormalized() {
-            double module = Module();
+            var module = Module();
             return new Vector2D(X / module, Y / module);
         }
 

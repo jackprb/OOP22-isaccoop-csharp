@@ -11,11 +11,11 @@ public interface IAiEnemy
     /// Method to perform enemies actions (move and hit) into the room linked to AI implementation.
     /// <param name="player">player in game in order to handle enemy actions</param>
     /// </summary>
-    public void UpdateEnemies(IMapElement player);
+    void UpdateEnemies(IMapElement player);
 
     /// <summary>
     /// Get controlled enemies list of this AiEnemy
     /// <returns>controlled enemies list</returns>
     /// </summary>
-    public List<IEnemy> GetControlledEnemies();
+    List<IEnemy> GetControlledEnemies();
 }

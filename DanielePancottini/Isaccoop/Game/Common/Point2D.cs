@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Isaccoop.Game.Common
+﻿namespace Isaccoop.Game.Common
 {
     /// <summary>
     /// Point2D class to model a 2d point into the space.
@@ -22,7 +20,8 @@ namespace Isaccoop.Game.Common
         /// </summary>
         /// <param name="x">x coordinate</param> 
         /// <param name="y">y  coordinate</param>
-        public Point2D(double x, double y) {
+        public Point2D(double x, double y) 
+        {
             X = x;
             Y = y;
         }
@@ -41,8 +40,8 @@ namespace Isaccoop.Game.Common
         /// <returns>difference between two points as a <see cref="Vector2D"/></returns> 
         public Vector2D Sub(Point2D v) => new Vector2D(X - v.X, Y - v.Y);
 
-        public override bool Equals(object obj) =>
-                obj is Point2D d && X == d.X && Y == d.Y;
+        public override bool Equals(object? obj) =>
+                obj is Point2D d && X.Equals(d.X) && Y.Equals(d.Y);
 
         public override int GetHashCode() => HashCode.Combine(X, Y);
     }
