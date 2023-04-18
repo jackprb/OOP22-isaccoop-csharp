@@ -1,7 +1,0 @@
-C:\Users\andre\Documents\isaccop\OOP22-isaccoop-csharp\DottiAndrea\Isaccoop\bin\Debug\Isaccoop.exe.config
-C:\Users\andre\Documents\isaccop\OOP22-isaccoop-csharp\DottiAndrea\Isaccoop\bin\Debug\Isaccoop.exe
-C:\Users\andre\Documents\isaccop\OOP22-isaccoop-csharp\DottiAndrea\Isaccoop\bin\Debug\Isaccoop.pdb
-C:\Users\andre\Documents\isaccop\OOP22-isaccoop-csharp\DottiAndrea\Isaccoop\obj\Debug\Isaccoop.csprojAssemblyReference.cache
-C:\Users\andre\Documents\isaccop\OOP22-isaccoop-csharp\DottiAndrea\Isaccoop\obj\Debug\Isaccoop.csproj.CoreCompileInputs.cache
-C:\Users\andre\Documents\isaccop\OOP22-isaccoop-csharp\DottiAndrea\Isaccoop\obj\Debug\Isaccoop.exe
-C:\Users\andre\Documents\isaccop\OOP22-isaccoop-csharp\DottiAndrea\Isaccoop\obj\Debug\Isaccoop.pdb

@@ -14,15 +14,15 @@ namespace Isaccoop.Test
         {
             /// Arrange
             var spawn = new SpawnOrdered();
-            var elements = new List<MapElement> { new MapElement() };
-            int width = 10;
-            int height = 10;
+            var elements = new List<IMapElement> { new MapElement(MapElement.ElementsRadius.BOSS) };
+            int width = 500;
+            int height = 500;
 
             /// Act
             spawn.SetPosition(elements, width, height);
 
             /// Assert
-            Assert.AreEqual(new Point2D(width / 2.0, height / 2.0), elements[0].Coords);
+            Assert.AreEqual(new Point2D(width / 2.0, height / 2.0), elements[0].GetCoords());
         }
 
         [TestMethod]
@@ -30,22 +30,22 @@ namespace Isaccoop.Test
         {
             /// Arrange
             var spawn = new SpawnOrdered();
-            var elements = new List<MapElement>
+            var elements = new List<IMapElement>
             {
-                new MapElement(),
-                new MapElement(),
-                new MapElement()
+                new MapElement(MapElement.ElementsRadius.BOSS),
+                new MapElement(MapElement.ElementsRadius.BOSS),
+                new MapElement(MapElement.ElementsRadius.BOSS)
             };
-            int width = 10;
-            int height = 10;
+            int width = 500;
+            int height = 500;
 
             /// Act
             spawn.SetPosition(elements, width, height);
 
             /// Assert
-            Assert.AreEqual(new Point2D(width / 2.0, height / 4.0), elements[0].Coords);
-            Assert.AreEqual(new Point2D(width / 2.0, height / 2.0), elements[1].Coords);
-            Assert.AreEqual(new Point2D(width / 2.0, 3 * height / 4.0), elements[2].Coords);
+            Assert.AreEqual(new Point2D(width / 2.0, height / 4.0), elements[0].GetCoords());
+            Assert.AreEqual(new Point2D(width / 2.0, height / 2.0), elements[1].GetCoords());
+            Assert.AreEqual(new Point2D(width / 2.0, 3 * height / 4.0), elements[2].GetCoords());
         }
 
         [TestMethod]
@@ -53,14 +53,14 @@ namespace Isaccoop.Test
         {
             // Arrange
             var spawn = new SpawnRandom();
-            var elements = new List<MapElement>
+            var elements = new List<IMapElement>
             {
-                new MapElement { Box = new CircleBoundingBox(1) },
-                new MapElement { Box = new CircleBoundingBox(2) },
-                new MapElement { Box = new CircleBoundingBox(3) }
+                new MapElement(MapElement.ElementsRadius.PLAYER),
+                new MapElement(MapElement.ElementsRadius.ENEMY),
+                new MapElement(MapElement.ElementsRadius.PLAYER)
             };
-            int width = 10;
-            int height = 10;
+            int width = 500;
+            int height = 500;
 
             // Act
             spawn.SetPosition(elements, width, height);
@@ -68,10 +68,11 @@ namespace Isaccoop.Test
             // Assert
             foreach (var element in elements)
             {
-                Assert.GreaterOrEqual(element.Coords.X, element.Box.Radius + element.Box.Radius / 2);
-                Assert.LessOrEqual(element.Coords.X, width - (element.Box.Radius + element.Box.Radius / 2));
-                Assert.GreaterOrEqual(element.Coords.Y, element.Box.Radius + element.Box.Radius / 2);
-                Assert.LessOrEqual(element.Coords.Y, height - (element.Box.Radius + element.Box.Radius / 2));
+                var radius = ((CircleBoundingBox)element.GetBox()).GetRadius();
+                Assert.IsTrue(element.GetCoords().X > radius);
+                Assert.IsTrue(element.GetCoords().X < width - radius);
+                Assert.IsTrue(element.GetCoords().Y > radius);
+                Assert.IsTrue(element.GetCoords().Y < height - radius);
             }
         }
     }

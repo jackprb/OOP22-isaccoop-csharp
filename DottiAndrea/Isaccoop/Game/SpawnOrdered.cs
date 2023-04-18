@@ -16,11 +16,11 @@ namespace Isaccoop.Game
         /// <param name="elementsToSpawn"></param>
         /// <param name="width"> of room</param>
         /// <param name="height"> of room</param>
-        public void SetPosition(List<MapElement> elementsToSpawn, int width, int height)
+        public void SetPosition(List<IMapElement> elementsToSpawn, int width, int height)
         {
             if (elementsToSpawn.Count == 1)
             {
-                elementsToSpawn[0].Coords = new Point2D(width / 2.0, height / 2.0);
+                elementsToSpawn[0].SetCoords(new Point2D(width / 2.0, height / 2.0));
             }
             else
             {
@@ -30,7 +30,7 @@ namespace Isaccoop.Game
                     return new { Element = element, YCoord = yCoord };
                 }).ToList().ForEach(pair =>
                 {
-                    pair.Element.Coords = new Point2D(width / 2.0, pair.YCoord);
+                    pair.Element.SetCoords(new Point2D(width / 2.0, pair.YCoord));
                 });
             }
         }

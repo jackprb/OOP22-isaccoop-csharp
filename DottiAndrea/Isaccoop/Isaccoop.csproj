@@ -50,6 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Game\CircleBoundingBox.cs" />
+    <Compile Include="Game\Main.cs" />
+    <Compile Include="Game\Common\MapElement.cs" />
+    <Compile Include="Game\Common\IMapElement.cs" />
     <Compile Include="Game\Common\Point2D.cs" />
     <Compile Include="Game\Common\Vector2D.cs" />
     <Compile Include="Game\IBoundingBox.cs" />
@@ -58,8 +61,6 @@
     <Compile Include="Game\SpawnOrdered.cs" />
     <Compile Include="Game\SpawnRandom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Test\TestBoundingBox.cs" />
-    <Compile Include="Test\TestSpawn.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

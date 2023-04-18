@@ -26,3 +26,4 @@ namespace Isaccoop.Game
         /// <returns> true if a collision occurs</returns>
         bool IsCollidingWithRecPerimeter(Point2D center, RectBoundingBox rectangleBox);
     }
+}
