@@ -15,7 +15,7 @@ namespace Isaccoop.Game
         /// <param name="radius"></param>
         public CircleBoundingBox(double radius)
         {
-            this._radius = radius;
+            _radius = radius;
         }
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace Isaccoop.Game
         /// <returns><inheritdoc/></returns>
         public bool IsCollidingWithCricle(Point2D center, Point2D center1, CircleBoundingBox circleBox)
         {
-            return new Vector2D(center, center1).Module() <= circleBox.GetRadius() + this._radius;
+            return new Vector2D(center, center1).Module() <= circleBox.GetRadius() + _radius;
         }
 
         /// <summary>
@@ -39,8 +39,8 @@ namespace Isaccoop.Game
         /// <returns><inheritdoc/></returns>
         public bool IsCollidingWithRecPerimeter(Point2D center, RectBoundingBox rectangleBox)
         {
-            return rectangleBox.GetHeight() - center.GetY() <= this._radius || center.GetY() <= this._radius
-                || rectangleBox.GetWidth() - center.GetX() <= this._radius || center.GetX() <= this._radius;
+            return rectangleBox.GetHeight() - center.Y <= _radius || center.Y <= _radius
+                || rectangleBox.GetWidth() - center.X <= _radius || center.X <= _radius;
         }
     }
 }
