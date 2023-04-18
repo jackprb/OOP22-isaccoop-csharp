@@ -4,7 +4,7 @@ namespace Isaccoop.Game.Common
 {
     public class MapElement : IMapElement
     {
-        private readonly Point2D _coords;
+        private Point2D _coords;
         private readonly IBoundingBox _box;
         private const double FIXED_INITIAL_POSITION = 10.0;
 
@@ -37,7 +37,7 @@ namespace Isaccoop.Game.Common
 
         public void SetCoords(Point2D coords)
         {
-            coords = new Point2D(coords.X, coords.Y);
+            _coords = new Point2D(coords.X, coords.Y);
         }
 
         public IBoundingBox GetBox()
