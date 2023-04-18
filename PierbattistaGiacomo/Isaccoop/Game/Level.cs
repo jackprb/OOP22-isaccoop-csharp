@@ -37,7 +37,7 @@ namespace Isaccoop.Game
         /// <inheritdoc/>
         /// </summary>
         /// <returns><inheritdoc/></returns>
-        public IList<IRoom> GetRooms() => _rooms;
+        public List<IRoom> GetRooms() => _rooms;
 
         /// <summary>
         /// <inheritdoc/>
