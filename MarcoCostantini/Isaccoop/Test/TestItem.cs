@@ -1,6 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Isaccoop.Game;
-using System;
 
 namespace Isaccoop.Test
 {
@@ -8,7 +7,7 @@ namespace Isaccoop.Test
     /// Class to test item.
     /// </summary>
     [TestClass]
-    class TestItem 
+    class TestItem
     {
         private readonly IPlayerStat _stat = new PlayerStatImpl();
         private readonly IItem _coin = new Coin();
@@ -21,7 +20,8 @@ namespace Isaccoop.Test
         /// Test function for power ups.
         /// </summary>
         [TestMethod]
-        void TestPowerUp() {
+        void TestPowerUp()
+        {
             Assert.AreEqual(1.0, _stat.Damage);
             _damageUp.SuperItem = true;
             _damageUp.Interact(_stat);
@@ -46,7 +46,8 @@ namespace Isaccoop.Test
         /// Test function for basic items.
         /// </summary>
         [TestMethod]
-        void TestItemStandard() {
+        void TestItemStandard()
+        {
             _coin.Interact(_stat);
             Assert.AreEqual(1, _stat.Coin);
 

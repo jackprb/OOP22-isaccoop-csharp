@@ -1,4 +1,5 @@
-namespace Isaccoop.Game{
+﻿namespace Isaccoop.Game
+{
 
     /// <summary>
     /// The class for player stats.

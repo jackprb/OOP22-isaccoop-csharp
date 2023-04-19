@@ -1,24 +1,28 @@
-namespace Isaccoop.Game;
-
-/// <summary>
-/// Represents the power up speed.
-/// </summary>
-
-public sealed class SpeedUp : PowerUp
+﻿namespace Isaccoop.Game
 {
-    private const double SpeedUpStandard = 1.0;
-    private const double SpeedSuperUp = 0.5;
     /// <summary>
-    /// Increase the player's speed.
+    /// Represents the power up speed.
     /// </summary>
-    /// <param name="p">reference to player. </param>
-    public override void Interact(IPlayerStat p)
+
+    public sealed class SpeedUp : PowerUp
     {
-        if(base.SuperItem)
+        private const double SpeedUpStandard = 1.0;
+        private const double SpeedSuperUp = 0.5;
+        /// <summary>
+        /// Increase the player's speed.
+        /// </summary>
+        /// <param name="p">reference to player. </param>
+        public override void Interact(IPlayerStat p)
         {
-            p.Speed += SpeedSuperUp;
-        } else {
-            p.Speed += SpeedUpStandard;
+            if (base.SuperItem)
+            {
+                p.Speed += SpeedSuperUp;
+            }
+            else
+            {
+                p.Speed += SpeedUpStandard;
+            }
         }
     }
 }
+

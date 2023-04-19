@@ -1,4 +1,4 @@
-namespace Isaccoop.Game;
+﻿namespace Isaccoop.Game;
 
 /// <summary>
 /// Represents the power up damage.
@@ -14,10 +14,12 @@ public sealed class DamageUp : PowerUp
     /// <param name="p">reference to player. </param>
     public override void Interact(IPlayerStat p)
     {
-        if(base.SuperItem)
+        if (base.SuperItem)
         {
             p.Damage += DamageSuperUp;
-        } else {
+        }
+        else
+        {
             p.Coin += DamageUpStandard;
         }
     }

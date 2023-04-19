@@ -1,24 +1,28 @@
-namespace Isaccoop.Game;
-
-/// <summary>
-/// Represents the power up coin.
-/// </summary>
-
-public sealed class CoinUp : PowerUp
+﻿namespace Isaccoop.Game
 {
-    private const int CoinUpStandard = 4;
-    private const int CoinSuperUp = 8;
     /// <summary>
-    /// Increase the player's money.
+    /// Represents the power up coin.
     /// </summary>
-    /// <param name="p">reference to player. </param>
-    public override void Interact(IPlayerStat p)
+
+    public sealed class CoinUp : PowerUp
     {
-        if(base.SuperItem)
+        private const int CoinUpStandard = 4;
+        private const int CoinSuperUp = 8;
+        /// <summary>
+        /// Increase the player's money.
+        /// </summary>
+        /// <param name="p">reference to player. </param>
+        public override void Interact(IPlayerStat p)
         {
-            p.Coin += CoinSuperUp;
-        } else {
-            p.Coin += CoinUpStandard;
+            if (base.SuperItem)
+            {
+                p.Coin += CoinSuperUp;
+            }
+            else
+            {
+                p.Coin += CoinUpStandard;
+            }
         }
     }
 }
+

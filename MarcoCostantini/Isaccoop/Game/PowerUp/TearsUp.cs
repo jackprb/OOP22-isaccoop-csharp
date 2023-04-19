@@ -1,24 +1,27 @@
-namespace Isaccoop.Game;
-
-/// <summary>
-/// Represents the power up tears.
-/// </summary>
-
-public sealed class TearsUp : PowerUp
+﻿namespace Isaccoop.Game
 {
-    private const int TearsUpStandard = -400;
-    private const int TearsSuperUp = -600;
     /// <summary>
-    /// Increase the player's tears.
+    /// Represents the power up tears.
     /// </summary>
-    /// <param name="p">reference to player. </param>
-    public override void Interact(IPlayerStat p)
+
+    public sealed class TearsUp : PowerUp
     {
-        if(base.SuperItem)
+        private const int TearsUpStandard = -400;
+        private const int TearsSuperUp = -600;
+        /// <summary>
+        /// Increase the player's tears.
+        /// </summary>
+        /// <param name="p">reference to player. </param>
+        public override void Interact(IPlayerStat p)
         {
-            p.Tears += TearsSuperUp;
-        } else {
-            p.Tears += TearsUpStandard;
+            if (base.SuperItem)
+            {
+                p.Tears += TearsSuperUp;
+            }
+            else
+            {
+                p.Tears += TearsUpStandard;
+            }
         }
     }
 }
