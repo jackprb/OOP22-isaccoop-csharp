@@ -1,26 +1,28 @@
-﻿namespace Isaccoop.Game;
-
-/// <summary>
-/// Represents the power up health.
-/// </summary>
-
-public sealed class HealthUp : PowerUp
+﻿namespace Isaccoop.Game
 {
-    private const int HealthUpStandard = 1;
-    private const int HealthSuperUp = 2;
     /// <summary>
-    /// Increase the player's health.
+    /// Represents the power up health.
     /// </summary>
-    /// <param name="p">reference to player. </param>
-    public override void Interact(IPlayerStat p)
+
+    public sealed class HealthUp : PowerUp
     {
-        if (base.SuperItem)
+        private const int HealthUpStandard = 1;
+        private const int HealthSuperUp = 2;
+        /// <summary>
+        /// Increase the player's health.
+        /// </summary>
+        /// <param name="p">reference to player. </param>
+        public override void Interact(IPlayerStat p)
         {
-            p.MaxHeart += HealthSuperUp;
-        }
-        else
-        {
-            p.MaxHeart += HealthUpStandard;
+            if (base.SuperItem)
+            {
+                p.MaxHeart += HealthSuperUp;
+            }
+            else
+            {
+                p.MaxHeart += HealthUpStandard;
+            }
         }
     }
 }
+

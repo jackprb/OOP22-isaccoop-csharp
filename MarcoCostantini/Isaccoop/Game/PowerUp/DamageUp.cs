@@ -1,26 +1,27 @@
-﻿namespace Isaccoop.Game;
-
-/// <summary>
-/// Represents the power up damage.
-/// </summary>
-
-public sealed class DamageUp : PowerUp
+﻿namespace Isaccoop.Game
 {
-    private const double DamageUpStandard = 1.0;
-    private const double DamageSuperUp = 2.0;
     /// <summary>
-    /// Increase the player's damage.
+    /// Represents the power up damage.
     /// </summary>
-    /// <param name="p">reference to player. </param>
-    public override void Interact(IPlayerStat p)
+
+    public sealed class DamageUp : PowerUp
     {
-        if (base.SuperItem)
+        private const double DamageUpStandard = 1.0;
+        private const double DamageSuperUp = 2.0;
+        /// <summary>
+        /// Increase the player's damage.
+        /// </summary>
+        /// <param name="p">reference to player. </param>
+        public override void Interact(IPlayerStat p)
         {
-            p.Damage += DamageSuperUp;
-        }
-        else
-        {
-            p.Coin += DamageUpStandard;
+            if (base.SuperItem)
+            {
+                p.Damage += DamageSuperUp;
+            }
+            else
+            {
+                p.Damage += DamageUpStandard;
+            }
         }
     }
 }
