@@ -9,5 +9,5 @@ public interface IItem
     /// Method for interacting with player stats.
     /// </summary>
     /// <param name="p">reference to player. </param>
-    void Interact(PlayerStat p);
+    void Interact(IPlayerStat p);
 }
