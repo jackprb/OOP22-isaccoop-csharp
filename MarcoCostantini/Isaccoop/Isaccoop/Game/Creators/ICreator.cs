@@ -5,7 +5,7 @@ namespace Isaccoop.Game
     /// <summary>
     /// Functional interface that manages the creation of items and enemies.
     /// </summary>
-    public interface Creator<E>
+    public interface ICreator<E>
     {
         /// <summary>
         /// Method to create a {@link List} of <E> type objects.
