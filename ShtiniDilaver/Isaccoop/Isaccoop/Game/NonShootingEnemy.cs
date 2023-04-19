@@ -1,4 +1,5 @@
 using Isaccoop.Game.Common;
+using System;
 
 namespace Isaccoop.Game{
 
@@ -11,12 +12,13 @@ namespace Isaccoop.Game{
         /// <summary>
         /// NonShootingEnemy constructor.
         /// </summary>
-        public NonShootingEnemy()
+        public NonShootingEnemy() : base(10.0, new NonShootingMovementStrategy(), new NonShootingHitStrategy())
         {
+        
         }
 
         /// <inheritdoc cref="IHitable" />
-        public void OnHit(readonly IPlayerStat player)
+        public void OnHit(IPlayerStat player)
         {
             if( ((NonShootingHitStrategy) base.GetHitStrategy()).CanHit() ) {
                 base.OnHit(player);

@@ -1,4 +1,6 @@
-namespace Isaccoop.Game{
+using System;
+
+namespace Isaccoop.Game.Common{
 
     /// <summary>
     /// Genertic Hitable subject.

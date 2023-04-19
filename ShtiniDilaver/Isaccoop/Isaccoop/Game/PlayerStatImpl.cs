@@ -1,7 +1,10 @@
+using Isaccoop.Game.Common;
+
 namespace Isaccoop.Game{
 
     /// <summary>
     /// The class for player stats.
+    /// Implements the <see cref="IPlayerStat"/>.
     /// </summary>
     public class PlayerStatImpl : MapElement, IPlayerStat
     {
@@ -28,16 +31,14 @@ namespace Isaccoop.Game{
         /// <summary>
         /// Player constructor.
         /// </summary>
-        public PlayerStatImpl()
+        public PlayerStatImpl() : base(ElementsRadius.PLAYER)
         {
-            base(ElementRadius.PLAYER);
             _heart = (int)PlayerValue.HEART;
             _maxHeart = (int)PlayerValue.MAX_HEART;
             _coin = (int)PlayerValue.COIN;
             _speed = (int)PlayerValue.SPEED;
             _damage = (int)PlayerValue.DAMAGE;
             _tears = (int)PlayerValue.TEARS;
-
         }
 
         /// <inheritdoc cref="IPlayerStat" />

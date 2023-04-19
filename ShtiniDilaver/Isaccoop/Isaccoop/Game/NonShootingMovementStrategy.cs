@@ -1,4 +1,5 @@
 using Isaccoop.Game.Common;
+using System;
 
 namespace Isaccoop.Game{
 
@@ -15,7 +16,7 @@ namespace Isaccoop.Game{
         /// <param name="playerPosition">The position of the player.</param>
         public Point2D Move(Point2D enemyPosition, Point2D playerPosition)
         {
-            Vector2D movementVector = playerPosition.Sub(enemyPosition).GetNormalized().Mul(NonShootingEnemy.Speed());
+            Vector2D movementVector = playerPosition.Sub(enemyPosition).GetNormalized().Mul(NonShootingEnemy.GetSpeed());
             return enemyPosition.Sum(movementVector);
         }
     }

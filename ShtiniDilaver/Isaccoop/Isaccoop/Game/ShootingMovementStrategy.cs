@@ -1,10 +1,11 @@
 using Isaccoop.Game.Common;
+using System;
 
 namespace Isaccoop.Game{
     /// <summary>
     /// The class for ShootingMovementStrategy.
     /// </summary>
-    public class PlayerStatImpl : IMovementStrategy
+    public class ShootingMovementStrategy : IMovementStrategy
     {
         private static readonly long TIME_INTERVAL = 500;
         private long _elapsedNewVector;
@@ -12,6 +13,11 @@ namespace Isaccoop.Game{
 
         public ShootingMovementStrategy()
         {
+        }
+
+        Point2D IMovementStrategy.Move(Point2D enemyPosition, Point2D playerPosition)
+        {
+            throw new NotImplementedException();
         }
     }
 }

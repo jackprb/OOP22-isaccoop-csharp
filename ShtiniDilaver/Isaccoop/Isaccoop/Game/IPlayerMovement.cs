@@ -1,3 +1,6 @@
+using Isaccoop.Game.Common;
+using System;
+
 namespace Isaccoop.Game{
 
     /// <summary>

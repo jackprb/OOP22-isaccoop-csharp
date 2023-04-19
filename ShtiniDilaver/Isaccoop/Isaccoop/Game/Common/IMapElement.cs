@@ -1,5 +1,6 @@
-namespace Isaccoop.Game.Common;
+using System;
 
+namespace Isaccoop.Game.Common{
 /// <summary>
 /// Interface to model elements.
 /// </summary>
@@ -17,4 +18,5 @@ public interface IMapElement
     /// </summary>
     void SetCoords(Point2D coords);
     
+}
 }
