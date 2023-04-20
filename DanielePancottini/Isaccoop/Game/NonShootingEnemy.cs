@@ -1,6 +1,4 @@
-﻿using Isaccoop.Game.Common;
-
-namespace Isaccoop.Game;
+﻿namespace Isaccoop.Game;
 
 /// <summary>
 /// NonShootingEnemy class that models non shooting enemy.

@@ -10,10 +10,7 @@ public class ConcreteAiEnemy : IAiEnemy
 
     private readonly List<IEnemy> _controlledEnemies;
 
-    public ConcreteAiEnemy (IEnumerable<IEnemy> enemies)
-    {
-        _controlledEnemies = new List<IEnemy>(enemies);
-    }
+    public ConcreteAiEnemy (IEnumerable<IEnemy> enemies) => _controlledEnemies = new List<IEnemy>(enemies);
 
     public void UpdateEnemies(IMapElement player) 
     {
@@ -26,8 +23,6 @@ public class ConcreteAiEnemy : IAiEnemy
     
     public List<IEnemy> GetControlledEnemies() => _controlledEnemies.ToList();
 
-    public void Remove(IMapElement e)
-    {
-        _controlledEnemies.Remove((IEnemy) e);
-    }
+    public void Remove(IMapElement e) => _controlledEnemies.Remove((IEnemy) e);
+    
 }

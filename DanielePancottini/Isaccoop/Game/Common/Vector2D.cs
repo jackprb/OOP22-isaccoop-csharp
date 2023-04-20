@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Isaccoop.Game.Common 
+﻿namespace Isaccoop.Game.Common 
 {
     /// <summary>
     /// Class to model a vector into 2d space.
