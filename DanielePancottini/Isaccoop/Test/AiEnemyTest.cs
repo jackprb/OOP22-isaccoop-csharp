@@ -32,6 +32,17 @@ public class AiEnemyTest
     }
 
     /// <summary>
+    /// Check if the AI method to get controlled enemies works properly
+    /// </summary>
+    [Test]
+    public void GetAiEnemies()
+    {
+        var enemies = GetNEnemies(MaxEnemies);
+        var ai = new ConcreteAiEnemy(enemies);
+        Assert.AreEqual(MaxEnemies, ai.GetControlledEnemies().Count);
+    }
+
+    /// <summary>
     /// Check if the remove all enemies stored into an AI goes without errors.
     /// </summary>
     [Test]
