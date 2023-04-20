@@ -2,6 +2,9 @@
 
 namespace Isaccoop.Game;
 
+/// <summary>
+/// ConcreteAIEnemy which is a base AIEnemy implementation.
+/// </summary>
 public class ConcreteAiEnemy : IAiEnemy
 {
 
@@ -12,7 +15,8 @@ public class ConcreteAiEnemy : IAiEnemy
         _controlledEnemies = new List<IEnemy>(enemies);
     }
 
-    public void UpdateEnemies(IMapElement player) {
+    public void UpdateEnemies(IMapElement player) 
+    {
         _controlledEnemies.ForEach(enemy => {
             enemy.Move(player.GetCoords());
             enemy.Hit(player.GetCoords());

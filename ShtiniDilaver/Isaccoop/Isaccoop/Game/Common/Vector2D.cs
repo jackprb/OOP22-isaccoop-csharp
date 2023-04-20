@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace Isaccoop.Game.Common 
 {
@@ -22,8 +22,7 @@ namespace Isaccoop.Game.Common
         /// </summary>
         /// <param name = "x"> x coordinate</param> 
         /// <param name = "y"> y coordinate</param>
-        public Vector2D(double x, double y)
-        {
+        public Vector2D(double x, double y) {
             X = x;
             Y = y;
         }
@@ -33,8 +32,7 @@ namespace Isaccoop.Game.Common
         /// </summary>
         /// <param name="to">destination point</param>
         /// <param name="from">origin point</param>
-        public Vector2D(Point2D to, Point2D from)
-        {
+        public Vector2D(Point2D to, Point2D from) {
             X = to.X - from.X;
             Y = to.Y - from.Y;
         }
@@ -56,8 +54,7 @@ namespace Isaccoop.Game.Common
         /// Method to normalize this <see cref="Vector2D"/>.
         /// </summary>
         /// <returns> normalized vector</returns>
-        public Vector2D GetNormalized()
-        {
+        public Vector2D GetNormalized() {
             double module = Module();
             return new Vector2D(X / module, Y / module);
         }

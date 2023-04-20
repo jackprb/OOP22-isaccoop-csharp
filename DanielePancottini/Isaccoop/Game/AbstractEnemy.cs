@@ -2,17 +2,32 @@
 
 namespace Isaccoop.Game;
 
-public class AbstractEnemy : IMapElement, IEnemy
+/// <summary>
+/// AbstractEnemy abstract class that extends AbstractMapElement and implements Enemy,
+/// it is used as a common container for enemies state and behavior.
+/// </summary>
+public abstract class AbstractEnemy : IEnemy
 {
     
     private const double FixedInitialPosition = 10.0;
-    private const double Speed = 5.0;
-    
+
     private Point2D _coords;
     private double _hearts;
     private readonly IMovementStrategy _movementStrategy;
     private readonly IHitStrategy _hitStrategy;
+    
+    /// <summary>
+    /// Get enemy speed.
+    /// </summary>
+    /// <returns>enemy speed</returns>
+    public double Speed => 5.0;
 
+    /// <summary>
+    /// AbstractEnemy Constructor.
+    /// </summary>
+    /// <param name="hearts">max hearts number for the enemy</param>
+    /// <param name="movementStrategy">the strategy for the movement</param>
+    /// <param name="hitStrategy">the strategy for the hit</param>
     protected AbstractEnemy(double hearts, IMovementStrategy movementStrategy, IHitStrategy hitStrategy)
     {
         _hearts = hearts;
@@ -40,9 +55,8 @@ public class AbstractEnemy : IMapElement, IEnemy
 
     public double GetHearts() => _hearts;
 
-    public List<IWeaponShot>? GetWeaponShots() => throw new NotImplementedException();
+    public List<IWeaponShot> GetWeaponShots() => throw new NotImplementedException();
 
     public IHitStrategy GetHitStrategy() => _hitStrategy;
-
-    public double GetSpeed() => Speed;
+    
 }
