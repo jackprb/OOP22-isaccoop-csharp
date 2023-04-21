@@ -11,7 +11,7 @@ namespace Isaccoop.Game
     {
         private static readonly int MaxNumberOfRooms = 10;
         private static readonly int MinNumberOfRooms = 6;
-        private readonly LevelFactoryUtils _lvlFactoryUtils = new LevelFactoryUtils();
+        private readonly LevelFactoryUtils _lvlFactoryUtils = new();
 
         /// <summary>
         /// <inheritdoc/>

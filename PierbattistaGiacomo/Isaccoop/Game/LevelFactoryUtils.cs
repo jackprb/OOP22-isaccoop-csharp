@@ -17,7 +17,7 @@ namespace Isaccoop.Game
         public IList<Point2D> GenerateRoomCoordinates(int numberOfRooms)
         {
             // initial position for the first room of the level
-            Point2D roomPos = new Point2D(0.0, 0.0);
+            Point2D roomPos = new(0.0, 0.0);
             IList<Point2D> list = new List<Point2D>();
 
             for (int i = 0; i < numberOfRooms; i++)
@@ -38,7 +38,7 @@ namespace Isaccoop.Game
         /// @return the new coordinate calculated from coordinate coord along direction dir
         /// <summary>
         public Point2D GetNewCoordinateAlongDirection(Point2D coord, Direction dir) => 
-            new Point2D(coord.X + dir.X, coord.Y + dir.Y);
+            new(coord.X + dir.X, coord.Y + dir.Y);
 
         /// <summary>
         /// check if specified coordinate is valid (inside the grid).
