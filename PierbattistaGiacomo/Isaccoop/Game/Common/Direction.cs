@@ -27,25 +27,25 @@ namespace Isaccoop.Game.Common
         /// Get the direction Up.
         /// </summary>
         /// <returns>The direction Up</returns>
-        public static Direction Up() => new Direction(0.0, -1.0);
+        public static Direction Up() => new(0.0, -1.0);
 
         /// <summary>
         /// Get the direction Down.
         /// </summary>
         /// <returns>The direction Down</returns>
-        public static Direction Down() => new Direction(0.0, 1.0);
+        public static Direction Down() => new(0.0, 1.0);
 
         /// <summary>
         /// Get the direction Right.
         /// </summary>
         /// <returns>The direction Right</returns>
-        public static Direction Right() => new Direction(1.0, 0.0);
+        public static Direction Right() => new(1.0, 0.0);
 
         /// <summary>
         /// Get the direction Left.
         /// </summary>
         /// <returns>The direction Left</returns>
-        public static Direction Left() => new Direction(-1.0, 0.0);
+        public static Direction Left() => new(-1.0, 0.0);
 
         /// <summary>
         /// Returns a list containing all Directions.
@@ -53,11 +53,13 @@ namespace Isaccoop.Game.Common
         /// <returns>the list of all Directions</returns>
         public static IList<Direction> ToList()
         {
-            List<Direction> directions = new List<Direction>();
-            directions.Add(Direction.Down());
-            directions.Add(Direction.Left());
-            directions.Add(Direction.Right());
-            directions.Add(Direction.Up());
+            List<Direction> directions = new()
+            {
+                Direction.Down(),
+                Direction.Left(),
+                Direction.Right(),
+                Direction.Up()
+            };
             return directions;
         }
     }
