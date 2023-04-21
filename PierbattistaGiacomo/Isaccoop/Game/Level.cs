@@ -10,7 +10,7 @@ namespace Isaccoop.Game
     /// </summary>
     public class Level : ILevel
     {
-        private readonly List<IRoom> _rooms = new List<IRoom>();
+        private readonly List<IRoom> _rooms = new();
 
         /// <summary>
         /// <inheritdoc/>
