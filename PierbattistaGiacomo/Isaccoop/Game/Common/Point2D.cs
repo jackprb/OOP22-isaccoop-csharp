@@ -33,14 +33,14 @@ namespace Isaccoop.Game.Common
         /// </summary>
         /// <param name="v">vector object as <see cref="Vector2D"/></param> 
         /// <returns>updated <see cref="Point2D"/> object</returns> 
-        public Point2D Sum(Vector2D v) => new Point2D(X + v.X, Y + v.Y);
+        public Point2D Sum(Vector2D v) => new(X + v.X, Y + v.Y);
 
         /// <summary>
         /// Method to compute the difference between two <see cref="Point2D"/>.
         /// </summary>
         /// <param name="v"> <see cref="Point2D"/> to compare with this</param>
         /// <returns>difference between two points as a <see cref="Vector2D"/></returns> 
-        public Vector2D Sub(Point2D v) => new Vector2D(X - v.X, Y - v.Y);
+        public Vector2D Sub(Point2D v) => new(X - v.X, Y - v.Y);
 
         public override bool Equals(object obj) =>
                 obj is Point2D d && X == d.X && Y == d.Y;

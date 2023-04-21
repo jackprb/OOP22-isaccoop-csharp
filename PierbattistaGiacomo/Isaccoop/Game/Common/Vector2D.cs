@@ -44,7 +44,7 @@ namespace Isaccoop.Game.Common
         /// </summary>
         /// <param name="v">vector to sum</param> v 
         /// <returns>sum between two <see cref="Vector2D"/></returns>
-        public Vector2D Sum(Vector2D v) => new Vector2D(X + v.X, Y + v.Y);
+        public Vector2D Sum(Vector2D v) => new(X + v.X, Y + v.Y);
 
         /// <summary>
         /// Method to compute the module of this <see cref="Vector2D"/>.
@@ -67,6 +67,6 @@ namespace Isaccoop.Game.Common
         /// </summary>
         /// <param name="fact">scalar number</param> 
         /// <returns> computed vector result</returns>
-        public Vector2D Mul(double fact) => new Vector2D(X * fact, Y * fact);
+        public Vector2D Mul(double fact) => new(X * fact, Y * fact);
     }
 }
